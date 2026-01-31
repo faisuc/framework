@@ -29,9 +29,11 @@
         <x-laravel-exceptions-renderer::routing-parameter :routeParameters="$exception->applicationRouteParametersContext()" />
     </x-laravel-exceptions-renderer::section-container>
 
+    @unless(app()->runningUnitTests())
     <x-laravel-exceptions-renderer::separator />
 
     <x-laravel-exceptions-renderer::section-container class="pb-0 sm:pb-0">
         <x-laravel-exceptions-renderer::laravel-ascii-spotlight />
     </x-laravel-exceptions-renderer::section-container>
+    @endunless
 </x-laravel-exceptions-renderer::layout>
